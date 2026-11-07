@@ -1,0 +1,78 @@
+Source text datablock: mars_helpers.py
+Not executed by this inspection.
+
+
+import bpy, math, mathutils, random, bmesh, json
+from mathutils import Vector, noise
+from mathutils.bvhtree import BVHTree
+
+T = bpy.data.objects["Mars_Terrain"]
+_dg = bpy.context.evaluated_depsgraph_get()
+_bvh = BVHTree.FromObject(T, _dg)
+_inv = T.matrix_world.inverted()
+_mw = T.matrix_world
+_dvec = (_inv.to_3x3() @ Vector((0, 0, -1))).normalized()
+
+def g(x, y):
+    h = _bvh.ray_cast(_inv @ Vector((x, y, 3000)), _dvec)
+    return (_mw @ h[0]).z if h[0] is not None else 0.0
+
+def ss(a, b, x):
+    u = max(0.0, min(1.0, (x - a) / (b - a)))
+    return u * u * (3 - 2 * u)
+
+ROOT = bpy.data.collections.get("Mars_New_Features") or bpy.data.collections.new("Mars_New_Features")
+if ROOT.name not in bpy.context.scene.collection.children:
+    bpy.context.scene.collection.children.link(ROOT)
+
+def sub(name):
+    c = bpy.data.collections.get(name) or bpy.data.collections.new(name)
+    if c.name not in ROOT.children:
+        ROOT.children.link(c)
+    return c
+
+def mat(name):
+    return bpy.data.materials[name]
+
+def add(name, verts, faces, coll, m, smooth=True):
+    me = bpy.data.meshes.new(name)
+    me.from_pydata(verts, [], faces)
+    me.update()
+    if smooth:
+        for p in me.polygons:
+            p.use_smooth = True
+    ob = bpy.data.objects.new(name, me)
+    coll.objects.link(ob)
+    me.materials.append(m)
+    ob["mars_new"] = True
+    return ob
+
+def grid(nx, ny, f):
+    V = [f(i, j) for j in range(ny + 1) for i in range(nx + 1)]
+    F = [(j * (nx + 1) + i, j * (nx + 1) + i + 1, (j + 1) * (nx + 1) + i + 1, (j + 1) * (nx + 1) + i)
+         for j in range(ny) for i in range(nx)]
+    return V, F
+
+def polar(cx, cy, R, s0, s1, nr, na, hf, lift=0.04, fan=False):
+    V = []; F = []
+    for i in range(nr + 1):
+        s = s0 + (s1 - s0) * i / nr
+        for a in range(na):
+            th = 2 * math.pi * a / na
+            x = cx + R * s * math.cos(th); y = cy + R * s * math.sin(th)
+            V.append((x, y, g(x, y) + hf(s, th) + lift))
+    for i in range(nr):
+        for a in range(na):
+            a2 = (a + 1) % na
+            F.append((i * na + a, (i + 1) * na + a, (i + 1) * na + a2, i * na + a2))
+    if fan:
+        c = len(V); V.append((cx, cy, g(cx, cy) + hf(0, 0) + lift))
+        for a in range(na):
+            F.append((c, a, (a + 1) % na))
+    return V, F
+
+# the camp area already has hand-placed features and all original models: keep new global features out of it
+def in_camp(x, y, r=0.0):
+    return (-345 - r) < x < (275 + r) and (-345 - r) < y < (135 + r)
+
+LIM = 3000.0

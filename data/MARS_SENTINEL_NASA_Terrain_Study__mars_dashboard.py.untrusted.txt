@@ -1,0 +1,407 @@
+Source text datablock: mars_dashboard.py
+Not executed by this inspection.
+
+
+import bpy, math
+
+CTL = "MARS_NEW_Controls"
+LAYERS = [("Layer_Elevation", "Elevation"), ("Layer_Slope", "Slope"), ("Layer_Geological", "Geological"),
+          ("Layer_Temperature", "Temperature"), ("Layer_Dust", "Dust"), ("Layer_Sunlight_Shadow", "Sunlight & Shadow")]
+CAMERAS = [("MARS_NEW_Globe_Camera", "Globe"), ("Astronauts_Camera", "Astronauts"), ("Mars_Camera", "Mars")]
+JOINTS = ["Spine", "Chest", "Head", "ShoulderL", "ShoulderR", "ElbowL", "ElbowR", "HandL", "HandR",
+          "HipL", "HipR", "KneeL", "KneeR", "AnkleL", "AnkleR"]
+
+
+def _redraw(context):
+    for w in context.window_manager.windows:
+        for a in w.screen.areas:
+            a.tag_redraw()
+
+
+def _j(n):
+    return bpy.data.objects.get("ASTRO_" + n)
+
+
+def _rot(n, x=0.0, y=0.0, z=0.0):
+    j = _j(n)
+    if j:
+        j.rotation_euler = (math.radians(x), math.radians(y), math.radians(z))
+
+
+def _leg(h, k):
+    a1 = math.radians(h); a2 = math.radians(h + k)
+    z = 0.03 + 0.46 * math.cos(a1) + 0.47 * math.cos(a2) + 0.10
+    f = 0.46 * math.sin(a1) + 0.47 * math.sin(a2)
+    return z, f
+
+
+def apply_pose(name, phase=0.0):
+    for n in JOINTS:
+        _rot(n)
+    hl = hr = kl = kr = 0.0
+    if name == "BEND":
+        _rot("Spine", -50); _rot("Chest", -10); _rot("Head", 30)
+        _rot("ShoulderL", 25); _rot("ShoulderR", 25); _rot("ElbowL", 15); _rot("ElbowR", 15)
+    elif name == "INSPECT":
+        hl = hr = 55.0; kl = kr = -105.0
+        _rot("Spine", -35); _rot("Chest", -10); _rot("Head", 35)
+        _rot("ShoulderR", 75); _rot("ElbowR", 25); _rot("ShoulderL", 30); _rot("ElbowL", 20)
+    elif name == "WALK":
+        s = math.sin(phase)
+        hl = 28 * s; hr = -28 * s
+        kl = -35 * max(0.0, -s); kr = -35 * max(0.0, s)
+        _rot("ShoulderL", -25 * s); _rot("ShoulderR", 25 * s); _rot("ElbowL", 20); _rot("ElbowR", 20)
+        _rot("Spine", 3)
+    _rot("HipL", hl); _rot("HipR", hr); _rot("KneeL", kl); _rot("KneeR", kr)
+    _rot("AnkleL", -(hl + kl)); _rot("AnkleR", -(hr + kr))
+    zl, fl = _leg(hl, kl); zr, fr = _leg(hr, kr)
+    z, f = (zl, fl) if zl >= zr else (zr, fr)
+    hips = _j("Hips")
+    if hips:
+        hips.location = (0.0, -f, z)
+    root = _j("Root")
+    if root:
+        root["Pose"] = name
+
+
+class MARS_OT_toggle_layer(bpy.types.Operator):
+    bl_idname = "mars.toggle_layer"
+    bl_label = "Toggle layer"
+    bl_options = {'INTERNAL'}
+    prop: bpy.props.StringProperty()
+
+    def execute(self, context):
+        c = bpy.data.objects.get(CTL)
+        if c is None:
+            return {'CANCELLED'}
+        c[self.prop] = 0 if c.get(self.prop, 0) else 1
+        c.update_tag(); context.view_layer.update(); _redraw(context)
+        return {'FINISHED'}
+
+
+class MARS_OT_layers_off(bpy.types.Operator):
+    bl_idname = "mars.layers_off"
+    bl_label = "All layers off"
+    bl_options = {'INTERNAL'}
+
+    def execute(self, context):
+        c = bpy.data.objects.get(CTL)
+        if c is None:
+            return {'CANCELLED'}
+        for p, _ in LAYERS:
+            c[p] = 0
+        c.update_tag(); context.view_layer.update(); _redraw(context)
+        return {'FINISHED'}
+
+
+class MARS_OT_set_camera(bpy.types.Operator):
+    bl_idname = "mars.set_camera"
+    bl_label = "Set scene camera"
+    bl_options = {'INTERNAL'}
+    cam: bpy.props.StringProperty()
+
+    def execute(self, context):
+        o = bpy.data.objects.get(self.cam)
+        if o is None:
+            self.report({'WARNING'}, "Camera not found")
+            return {'CANCELLED'}
+        context.scene.camera = o
+        _redraw(context)
+        return {'FINISHED'}
+
+
+class MARS_OT_astro_move(bpy.types.Operator):
+    bl_idname = "mars.astro_move"
+    bl_label = "Move astronaut"
+    bl_options = {'INTERNAL'}
+    cmd: bpy.props.StringProperty()
+
+    def execute(self, context):
+        r = _j("Root")
+        if r is None:
+            self.report({'WARNING'}, "Astronaut not found")
+            return {'CANCELLED'}
+        step = float(r.get("Step_Size", 0.7))
+        yaw = r.rotation_euler.z
+        if self.cmd in ("FWD", "BACK"):
+            d = step if self.cmd == "FWD" else -step * 0.7
+            r.location.x += -math.sin(yaw) * d
+            r.location.y += math.cos(yaw) * d
+            r["Walk_Phase"] = float(r.get("Walk_Phase", 0.0)) + 1.3
+            apply_pose("WALK", r["Walk_Phase"])
+        elif self.cmd == "LEFT":
+            r.rotation_euler.z += math.radians(15)
+        elif self.cmd == "RIGHT":
+            r.rotation_euler.z -= math.radians(15)
+        elif self.cmd == "STOP":
+            apply_pose("STAND")
+        context.view_layer.update(); _redraw(context)
+        return {'FINISHED'}
+
+
+class MARS_OT_astro_pose(bpy.types.Operator):
+    bl_idname = "mars.astro_pose"
+    bl_label = "Astronaut pose"
+    bl_options = {'INTERNAL'}
+    pose: bpy.props.StringProperty()
+
+    def execute(self, context):
+        if _j("Root") is None:
+            return {'CANCELLED'}
+        apply_pose(self.pose)
+        context.view_layer.update(); _redraw(context)
+        return {'FINISHED'}
+
+
+class MARS_OT_astro_inspect(bpy.types.Operator):
+    bl_idname = "mars.astro_inspect"
+    bl_label = "Go to nearest rock and inspect"
+    bl_options = {'INTERNAL'}
+
+    def execute(self, context):
+        r = _j("Root")
+        if r is None:
+            return {'CANCELLED'}
+        rp = r.matrix_world.translation
+        best = None
+        for o in bpy.data.objects:
+            if o.type == 'MESH' and o.name.startswith("Rock_"):
+                p = o.matrix_world.translation
+                d = math.hypot(p.x - rp.x, p.y - rp.y)
+                if d > 2.0 and (best is None or d < best[0]):
+                    best = (d, o)
+        if best is None:
+            self.report({'INFO'}, "No rock found")
+            return {'CANCELLED'}
+        o = best[1]; p = o.matrix_world.translation
+        dx, dy = p.x - rp.x, p.y - rp.y; L = math.hypot(dx, dy)
+        r.rotation_euler.z = math.atan2(-dx, dy)
+        r.location.x = p.x - dx / L * 1.1
+        r.location.y = p.y - dy / L * 1.1
+        apply_pose("INSPECT")
+        context.view_layer.update(); _redraw(context)
+        self.report({'INFO'}, "Inspecting " + o.name)
+        return {'FINISHED'}
+
+
+class MARS_OT_astro_fpv(bpy.types.Operator):
+    bl_idname = "mars.astro_fpv"
+    bl_label = "First person view"
+    bl_options = {'INTERNAL'}
+    on: bpy.props.BoolProperty(default=True)
+
+    def execute(self, context):
+        sc = context.scene
+        cam = bpy.data.objects.get("ASTRO_FPV_Camera")
+        if self.on:
+            if cam is None:
+                return {'CANCELLED'}
+            if sc.camera is not None and sc.camera.name != cam.name:
+                sc["mars_prev_camera"] = sc.camera.name
+            sc.camera = cam
+        else:
+            prev = bpy.data.objects.get(sc.get("mars_prev_camera", "Astronauts_Camera"))
+            if prev:
+                sc.camera = prev
+        for w in context.window_manager.windows:
+            for a in w.screen.areas:
+                if a.type == 'VIEW_3D':
+                    a.spaces.active.region_3d.view_perspective = 'CAMERA' if self.on else 'PERSP'
+        _redraw(context)
+        return {'FINISHED'}
+
+
+PRESETS = [("Jezero", 18.4, 77.5), ("Gale", -5.4, 137.8), ("Olympus Mons", 18.65, -133.8),
+           ("Valles Marineris", -13.9, -59.2), ("Hellas", -42.4, 70.5), ("Elysium", 25.0, 147.2)]
+
+LEGEND = {
+    "Layer_Elevation": ("NEW_Layer_Elevation", "Color Ramp", "Low -17 m  ->  High 439 m"),
+    "Layer_Slope": ("NEW_Layer_Slope", "Color Ramp", "Flat 0 deg  ->  Steep 60 deg"),
+    "Layer_Geological": ("NEW_Layer_Geological", "Color Ramp", "Geological units (procedural): regolith, iron oxide, basalt, sulfate, clay"),
+    "Layer_Temperature": ("NEW_Layer_Temperature", "Color Ramp", "Relative: cold (high / shaded)  ->  warm (low / sunlit)"),
+    "Layer_Dust": (None, None, "Dust density: transparent (clear)  ->  dense (dusty)"),
+    "Layer_Sunlight_Shadow": ("NEW_Layer_Sunlight_Shadow", "Color Ramp", "Shadow  ->  Sunlight"),
+}
+
+DEMO_PARTS = ["Root", "Hips"] + JOINTS
+
+
+class MARS_OT_explore_preset(bpy.types.Operator):
+    bl_idname = "mars.explore_preset"
+    bl_label = "Set exploration area"
+    bl_options = {'INTERNAL'}
+    lat: bpy.props.FloatProperty()
+    lon: bpy.props.FloatProperty()
+
+    def execute(self, context):
+        c = bpy.data.objects.get(CTL)
+        if c is None:
+            return {'CANCELLED'}
+        c["Explore_Lat"] = self.lat
+        c["Explore_Lon"] = self.lon
+        c.update_tag(); context.view_layer.update(); _redraw(context)
+        return {'FINISHED'}
+
+
+class MARS_OT_astro_demo(bpy.types.Operator):
+    bl_idname = "mars.astro_demo"
+    bl_label = "Astronaut demo animation"
+    bl_options = {'INTERNAL'}
+    play: bpy.props.BoolProperty(default=True)
+
+    def execute(self, context):
+        sc = context.scene
+        root = _j("Root")
+        if root is None:
+            return {'CANCELLED'}
+        for part in DEMO_PARTS:
+            o = _j(part)
+            act = bpy.data.actions.get("ASTRODEMO_" + part)
+            if o is None or act is None:
+                continue
+            if self.play:
+                if o.animation_data is None:
+                    o.animation_data_create()
+                o.animation_data.action = act
+            elif o.animation_data is not None:
+                o.animation_data.action = None
+        if self.play:
+            sc.frame_start = 1; sc.frame_end = 250; sc.frame_set(1)
+            if not context.screen.is_animation_playing:
+                bpy.ops.screen.animation_play()
+        else:
+            if context.screen.is_animation_playing:
+                bpy.ops.screen.animation_play()
+            sc.frame_set(1)
+            if "Demo_Start_Loc" in root:
+                root.location = (root["Demo_Start_Loc"][0], root["Demo_Start_Loc"][1], root.location.z)
+                root.rotation_euler.z = root["Demo_Start_Yaw"]
+            apply_pose("STAND")
+        context.view_layer.update(); _redraw(context)
+        return {'FINISHED'}
+
+
+
+class MARS_PT_dashboard(bpy.types.Panel):
+    bl_label = "Mars Dashboard"
+    bl_idname = "MARS_PT_dashboard"
+    bl_space_type = 'VIEW_3D'
+    bl_region_type = 'UI'
+    bl_category = "Mars"
+
+    def draw(self, context):
+        lay = self.layout
+        c = bpy.data.objects.get(CTL)
+        if c is None:
+            lay.label(text="MARS_NEW_Controls missing", icon='ERROR')
+            return
+
+        box = lay.box()
+        box.label(text="Phase 1 - Mars Globe", icon='WORLD')
+        box.prop(c, '["Globe_Zoom"]', text="Zoom", slider=True)
+        box.prop(c, '["Globe_Spin_Speed"]', text="Spin speed")
+        box.prop(c, '["Globe_Rotation_Offset"]', text="Rotation")
+        box.label(text="Scene camera:")
+        row = box.row(align=True)
+        cur = context.scene.camera
+        for name, label in CAMERAS:
+            if bpy.data.objects.get(name) is None:
+                continue
+            op = row.operator("mars.set_camera", text=label, depress=(cur is not None and cur.name == name))
+            op.cam = name
+
+        sub = box.box()
+        sub.label(text="Exploration area (select)", icon='PINNED')
+        sub.prop(c, '["Explore_Lat"]', text="Latitude", slider=True)
+        sub.prop(c, '["Explore_Lon"]', text="Longitude", slider=True)
+        grid = sub.grid_flow(columns=2, align=True)
+        for pname, plat, plon in PRESETS:
+            pop = grid.operator("mars.explore_preset", text=pname)
+            pop.lat = plat; pop.lon = plon
+
+        box = lay.box()
+        box.label(text="Phase 2 - 3D Terrain (whole area)", icon='MOD_DISPLACE')
+        root = bpy.data.collections.get("Mars_New_Features")
+        if root is not None:
+            col = box.column(align=True)
+            for coll in sorted(root.children, key=lambda x: x.name):
+                if coll.name.startswith("NEW_Terrain_Layers") or coll.name in ("NEW_Mars_Globe", "NEW_Astronaut"):
+                    continue
+                col.prop(coll, "hide_viewport", text=coll.name.replace("NEW_", "").replace("_", " "),
+                         toggle=True, invert_checkbox=True)
+
+        box = lay.box()
+        box.label(text="Phase 3 - Terrain Layers", icon='RENDERLAYERS')
+        for p, label in LAYERS:
+            on = bool(c.get(p, 0))
+            op = box.operator("mars.toggle_layer", text=label, depress=on,
+                              icon='CHECKBOX_HLT' if on else 'CHECKBOX_DEHLT')
+            op.prop = p
+        box.operator("mars.layers_off", text="All layers off", icon='X')
+        for p, label in LAYERS:
+            if c.get(p, 0):
+                mname, nname, txt = LEGEND[p]
+                lg = box.box()
+                lg.label(text="Legend - " + label, icon='COLOR')
+                lg.label(text=txt)
+                m = bpy.data.materials.get(mname) if mname else None
+                node = m.node_tree.nodes.get(nname) if (m and m.node_tree) else None
+                if node is not None:
+                    col = lg.column()
+                    col.enabled = False
+                    col.template_color_ramp(node, "color_ramp")
+
+        box = lay.box()
+        box.label(text="Phase 4 - Astronaut", icon='ARMATURE_DATA')
+        r = _j("Root")
+        if r is None:
+            box.label(text="Astronaut not found", icon='ERROR')
+        else:
+            box.label(text="Pose: " + str(r.get("Pose", "STAND")))
+            box.prop(r, '["Step_Size"]', text="Step size")
+            row = box.row(align=True)
+            row.operator("mars.astro_move", text="Turn L", icon='LOOP_BACK').cmd = "LEFT"
+            row.operator("mars.astro_move", text="Forward", icon='TRIA_UP').cmd = "FWD"
+            row.operator("mars.astro_move", text="Turn R", icon='LOOP_FORWARDS').cmd = "RIGHT"
+            row = box.row(align=True)
+            row.operator("mars.astro_move", text="Back", icon='TRIA_DOWN').cmd = "BACK"
+            row.operator("mars.astro_move", text="Stop", icon='PAUSE').cmd = "STOP"
+            row = box.row(align=True)
+            for pose, label in (("STAND", "Stand"), ("BEND", "Bend"), ("INSPECT", "Inspect")):
+                row.operator("mars.astro_pose", text=label, depress=(r.get("Pose") == pose)).pose = pose
+            box.operator("mars.astro_inspect", text="Go to nearest rock & inspect", icon='VIEWZOOM')
+            row = box.row(align=True)
+            cam = context.scene.camera
+            row.operator("mars.astro_fpv", text="First Person View", icon='CAMERA_DATA',
+                         depress=(cam is not None and cam.name == "ASTRO_FPV_Camera")).on = True
+            row.operator("mars.astro_fpv", text="Exit", icon='X').on = False
+            row = box.row(align=True)
+            row.operator("mars.astro_demo", text="Play demo", icon='PLAY').play = True
+            row.operator("mars.astro_demo", text="Stop & reset", icon='SNAP_FACE').play = False
+
+
+CLASSES = (MARS_OT_toggle_layer, MARS_OT_layers_off, MARS_OT_set_camera, MARS_OT_astro_move, MARS_OT_astro_pose,
+           MARS_OT_astro_inspect, MARS_OT_astro_fpv, MARS_OT_explore_preset, MARS_OT_astro_demo, MARS_PT_dashboard)
+
+
+def register():
+    for old in list(bpy.types.Panel.__subclasses__()):
+        if old.__name__ == "MARS_PT_dashboard":
+            try:
+                bpy.utils.unregister_class(old)
+            except Exception:
+                pass
+    for cls in CLASSES:
+        try:
+            bpy.utils.unregister_class(cls)
+        except Exception:
+            pass
+        bpy.utils.register_class(cls)
+
+
+def unregister():
+    for cls in reversed(CLASSES):
+        try:
+            bpy.utils.unregister_class(cls)
+        except Exception:
+            pass

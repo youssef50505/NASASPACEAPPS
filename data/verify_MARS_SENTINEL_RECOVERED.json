@@ -1,0 +1,36 @@
+{
+  "file": "C:\\Users\\yhsn5\\Downloads\\NASASPACEAPP\\MARS_SENTINEL_NASA_Terrain_Study.blend",
+  "active_scene": "Scene",
+  "scene_count": 1,
+  "scene_objects": 4181,
+  "camera": "MARS_NEW_Globe_Camera",
+  "world": "Mars_Sky_NASA",
+  "frame": 112,
+  "terrain_exists": true,
+  "terrain_collections": [
+    "FIELD SITE | Jezero (linked original assets)",
+    "Ground"
+  ],
+  "site_link_collection_objects": 10,
+  "original_text_blocks_present": [
+    "front_view_models.py",
+    "mars_dashboard.py"
+  ],
+  "terrain_shape_keys": {
+    "Basis": {
+      "value": 1.0,
+      "slider_min": 0.0,
+      "slider_max": 1.0
+    },
+    "Flat_Ground": {
+      "value": 1.0,
+      "slider_min": 0.0,
+      "slider_max": 1.0
+    }
+  },
+  "terrain_custom_props": {
+    "mars_site_latitude_deg": 18.42875,
+    "mars_site_longitude_east_deg": 77.44215,
+    "mars_site_data_relationship": "Jezero local HiRISE DTM patch; geographic location corresponds to the MARS_NEW_Explore_Area_Pin/Ring controls on the global Mars scene. Original local/world transforms intentionally preserved."
+  }
+}

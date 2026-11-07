@@ -1,0 +1,49 @@
+{
+  "blend": "C:\\Users\\yhsn5\\Downloads\\NASASPACEAPP\\MARS_SENTINEL_NASA_Terrain_Study_HIRISE_SITE.blend",
+  "scene_count": 1,
+  "active_scene": "Scene",
+  "object_count": 4182,
+  "camera": "MARS_NEW_Globe_Camera",
+  "world": "Mars_Sky_NASA",
+  "frame": 112,
+  "site_object": "NASA_HiRISE_DTM_Jezero_FieldSite_4m",
+  "site_mesh_vertices": 1132096,
+  "site_mesh_faces": 1129969,
+  "site_materials": [
+    "Mars_Terrain_Rust"
+  ],
+  "site_world_bounds_min": [
+    -2125.77001953125,
+    -2126.489990234375,
+    -54.98500442504883
+  ],
+  "site_world_bounds_max": [
+    2126.22998046875,
+    2125.510009765625,
+    108.42930603027344
+  ],
+  "site_custom_props": {
+    "data_product": "USGS Mars 2020 TRN HiRISE DTM Mosaic",
+    "data_source_url": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/mars2020_trn/HiRISE/JEZ_hirise_soc_006_DTM_MOLAtopography_DeltaGeoid_1m_Eqc_latTs0_lon0_blend40.tif",
+    "data_landing_page": "https://astrogeology.usgs.gov/search/map/mars_2020_terrain_relative_navigation_hirise_dtm_mosaic",
+    "data_doi": "10.5066/P9REJ9JN",
+    "site_latitude_north_deg": 18.42875,
+    "site_longitude_east_deg": 77.44215,
+    "native_source_resolution_m_per_pixel": 1.0,
+    "mesh_sample_spacing_m": 4.0,
+    "vertical_exaggeration": 1.0,
+    "reference_elevation_m": -2575.295166015625,
+    "elevation_min_m": -2621.27001953125,
+    "elevation_max_m": -2466.880859375,
+    "core_width_m": 4092.0,
+    "core_height_m": 4092.0,
+    "edge_skirt_width_m": 80.0,
+    "edge_skirt_is_visual_transition": true,
+    "nodata_samples": 0
+  },
+  "base_terrain_location_z": -54.84000015258789,
+  "site_collection": [
+    "FIELD SITE | Jezero (linked original assets)"
+  ],
+  "custom_key_script_present": true
+}

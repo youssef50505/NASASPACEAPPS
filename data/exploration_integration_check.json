@@ -1,0 +1,29 @@
+{
+  "color_blend": "C:\\Users\\yhsn5\\Downloads\\NASASPACEAPP\\MARS_SENTINEL_NASA_Terrain_Study_HIRISE_NASA_COLOR.blend",
+  "final_blend": "C:\\Users\\yhsn5\\Downloads\\NASASPACEAPP\\MARS_SENTINEL_NASA_Terrain_Study_EXPLORATION.blend",
+  "site_vertices": 1132096,
+  "site_co_sha256": "ed5e2c9e0d23cb45dfbaf7c11deee3e168ea59d9681d8a094e3b514b32b354dd",
+  "terrain_shape_keys": {
+    "Basis": 1.0,
+    "Flat_Ground": 1.0
+  },
+  "safe_distance_m": 1143.31,
+  "short_distance_m": 1135.24,
+  "hazard_markers": 27,
+  "slope_max_deg": 63.646,
+  "landing_local_m": [
+    512.73,
+    945.43
+  ],
+  "layers_hidden_as_unmeasured": [
+    "NEW_Layer_Elevation",
+    "NEW_Layer_Slope",
+    "NEW_Layer_Geological",
+    "NEW_Layer_Temperature",
+    "NEW_Layer_Dust",
+    "NEW_Layer_Sunlight_Shadow"
+  ],
+  "ancient_water_marker": "No ancient-water pin was added. The Jezero western delta fan is outside this 4092 m HiRISE mesh, so a pin inside the mesh would not be the published delta.",
+  "scene_camera_remains": "MARS_NEW_Globe_Camera",
+  "frame_preserved": 112
+}

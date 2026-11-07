@@ -1,0 +1,28 @@
+{
+  "output_png": "jez_hirise_site_local_rgb_1m.png",
+  "fallback_png": "jez_hirise_site_nasa_color_1m.png",
+  "product": "HiRISE merged RGB, approximate true color, observation ESP_045994_1985",
+  "observation_id": "ESP_045994_1985",
+  "product_file": "ESP_045994_1985_MRGB.JP2",
+  "doi": null,
+  "url": "https://hirise-pds.lpl.arizona.edu/PDS/EXTRAS/RDR/ESP/ORB_045900_045999/ESP_045994_1985/ESP_045994_1985_MRGB.JP2",
+  "label_url": "https://hirise-pds.lpl.arizona.edu/PDS/EXTRAS/RDR/ESP/ORB_045900_045999/ESP_045994_1985/ESP_045994_1985_MRGB.LBL",
+  "observation_page": "https://www.uahirise.org/ESP_045994_1985",
+  "credit": "NASA/JPL-Caltech/UArizona",
+  "license": "Public domain",
+  "false_color": false,
+  "irb_used_as_surface_color": false,
+  "stretch": "HiRISE NORMAL_STRETCH relative DN, not calibrated reflectance",
+  "map_scale_m_per_pixel": 0.5,
+  "coverage_fraction_of_4096_window": 0.4136,
+  "color_strip": "HiRISE BG color CCDs cover the center of the red image. Gray wings keep the earlier HiRISE-brightness tint.",
+  "edge_blend_m": 30,
+  "bounds_m": {
+    "left": 4588314.0,
+    "bottom": 1090313.0,
+    "right": 4592406.0,
+    "top": 1094405.0
+  },
+  "outside_footprint": "Existing HiRISE red brightness with the bright-site Viking hue is retained where this product is null.",
+  "mesh_unchanged": true
+}

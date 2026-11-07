@@ -1,0 +1,39 @@
+{
+  "ok": true,
+  "checks": {
+    "scene_camera": "MARS_NEW_Globe_Camera",
+    "frame": 112,
+    "site_vertices": 1132096,
+    "site_location": [
+      0.23,
+      -0.49,
+      0.014996
+    ],
+    "site_scale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "site_hash": "ed5e2c9e0d23cb45dfbaf7c11deee3e168ea59d9681d8a094e3b514b32b354dd",
+    "site_material": "Mars_NASA_HiRISE_Viking_Color",
+    "terrain_location_z": -54.84,
+    "terrain_shape_keys": {
+      "Basis": 1.0,
+      "Flat_Ground": 1.0
+    },
+    "image_packed": true,
+    "routes": [
+      "MS_Route_Safest_HiRISE",
+      "MS_Route_Shortest_HiRISE",
+      "MS_Route_Science_HiRISE"
+    ],
+    "landing": true,
+    "tour_action": "MS_Tour_CameraAction",
+    "hazards": 27,
+    "msl_location": [
+      1.094,
+      14.027,
+      0.364
+    ]
+  }
+}

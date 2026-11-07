@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+
+# GitHub rejects any file larger than 100 MB.
+*.blend
+*.blend1
+data/JEZ_hirise_soc_006_DTM_1m.tif
+data/ESP_045994_1985_MRGB.JP2

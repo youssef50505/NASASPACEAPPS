@@ -1,0 +1,2174 @@
+{
+  "filepath": "C:\\Users\\yhsn5\\Downloads\\NASASPACEAPP\\MARS_SENTINEL_NASA_Terrain_Study_HIRISE_READY.blend",
+  "scene": "Scene",
+  "objects": 4182,
+  "camera": "MARS_NEW_Globe_Camera",
+  "world": "Mars_Sky_NASA",
+  "frame": 112,
+  "collections": [
+    "Cameras (3)",
+    "Craters (564)",
+    "FIELD SITE | Jezero (linked original assets) (11)",
+    "Girl_Outfit_Transfer (17)",
+    "Ground (1)",
+    "Lighting (1)",
+    "Mars_New_Features (0)",
+    "Mars_Pebbles (450)",
+    "Mountains (1)",
+    "NEW_Astronaut (0)",
+    "NEW_Exploration_Paths (23)",
+    "NEW_Global_Boulders (117)",
+    "NEW_Global_Craters (186)",
+    "NEW_Global_Dunes (4)",
+    "NEW_Global_Plains (1)",
+    "NEW_Global_Slopes (0)",
+    "NEW_Global_Trails (99)",
+    "NEW_Global_Valleys (0)",
+    "NEW_Mars_Globe (9)",
+    "NEW_Terrain_Features (6)",
+    "NEW_Terrain_Layers (6)",
+    "NewHead_Parts (4)",
+    "Pebble_Variants (3)",
+    "Rocks (757)",
+    "RoutePlan (22)",
+    "Suit_on_Girl (9)",
+    "glTF_not_exported (6)"
+  ],
+  "cameras": [
+    "Mars_OneShot_Camera",
+    "Mars_Orbit_View_Camera",
+    "Mars_Camera",
+    "Girls_Camera",
+    "Astronauts_Camera",
+    "MARS_NEW_Globe_Camera"
+  ],
+  "armatures": [
+    "Object_4",
+    "GLTF_created_0",
+    "GLTF_created_0.001",
+    "GLTF_created_0.002",
+    "ludovisions_FC1_rig"
+  ],
+  "lights": [
+    "Mars_Sun"
+  ],
+  "curves": [
+    "White_Circle_Marker",
+    "RP_Route_Safe",
+    "RP_Route_Shortest"
+  ],
+  "site": {
+    "min": [
+      -2125.77001953125,
+      -2126.489990234375,
+      -54.98500442504883
+    ],
+    "max": [
+      2126.22998046875,
+      2125.510009765625,
+      108.42930603027344
+    ],
+    "location": [
+      0.23000000417232513,
+      -0.49000000953674316,
+      0.014995723962783813
+    ],
+    "rotation": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "matrix_world": [
+      1.0,
+      0.0,
+      0.0,
+      0.23,
+      0.0,
+      1.0,
+      0.0,
+      -0.49,
+      0.0,
+      0.0,
+      1.0,
+      0.014996,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "vertices": 1132096,
+    "polygons": 1129969,
+    "materials": [
+      "Mars_HiRISE_Elevation_Visual"
+    ],
+    "uv": [
+      "UVMap"
+    ],
+    "color_attributes": [
+      "HiRISE_Elevation_Tint"
+    ],
+    "shape_keys": null
+  },
+  "terrain": {
+    "min": [
+      -13010.0,
+      -12630.0,
+      -54.98501968383789
+    ],
+    "max": [
+      13010.0,
+      13390.0,
+      -54.984989166259766
+    ],
+    "location": [
+      0.23000000417232513,
+      -0.49000000953674316,
+      -54.84000015258789
+    ],
+    "rotation": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "matrix_world": [
+      1.0,
+      0.0,
+      0.0,
+      0.23,
+      0.0,
+      1.0,
+      0.0,
+      -0.49,
+      0.0,
+      0.0,
+      1.0,
+      -54.84,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "vertices": 361201,
+    "materials": [
+      "Mars_Terrain_Rust",
+      "Mars_Mountain_Rock"
+    ],
+    "shape_keys": {
+      "Basis": 1.0,
+      "Flat_Ground": 1.0
+    }
+  },
+  "interesting": [
+    {
+      "name": "MSL",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "Wheels_objs",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "arm.001",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "arm.003",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "arm.002",
+      "type": "MESH",
+      "parent": "arm.003"
+    },
+    {
+      "name": "arm",
+      "type": "MESH",
+      "parent": "arm.002"
+    },
+    {
+      "name": "arm.004",
+      "type": "MESH",
+      "parent": "arm"
+    },
+    {
+      "name": "antenna_uhf",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "antenna_hg",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "antenna_lg",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "Up_Look_Camera",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "Down_Look_Camera",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "arm_01_joint",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "arm_01_pivot",
+      "type": "MESH",
+      "parent": "arm_01_joint"
+    },
+    {
+      "name": "arm_01",
+      "type": "MESH",
+      "parent": "arm_01_pivot"
+    },
+    {
+      "name": "arm_02_joint",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "arm_02_pivot",
+      "type": "MESH",
+      "parent": "arm_02_joint"
+    },
+    {
+      "name": "arm_02",
+      "type": "MESH",
+      "parent": "arm_02_pivot"
+    },
+    {
+      "name": "arm_02.001",
+      "type": "MESH",
+      "parent": "arm_02_pivot"
+    },
+    {
+      "name": "arm_cable_etc",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "helmet_base_camera_glass",
+      "type": "EMPTY",
+      "parent": "Object_4"
+    },
+    {
+      "name": "_stuff_cloth_pack_pins",
+      "type": "EMPTY",
+      "parent": "Object_4"
+    },
+    {
+      "name": "JetpackSpine1_248",
+      "type": "EMPTY",
+      "parent": "GLTF_created_0"
+    },
+    {
+      "name": "UHF_antenna",
+      "type": "EMPTY",
+      "parent": "Root"
+    },
+    {
+      "name": "UHF_antenna_0",
+      "type": "MESH",
+      "parent": "UHF_antenna"
+    },
+    {
+      "name": "UHF_antenna_1",
+      "type": "MESH",
+      "parent": "UHF_antenna"
+    },
+    {
+      "name": "UHF_antenna_2",
+      "type": "MESH",
+      "parent": "UHF_antenna"
+    },
+    {
+      "name": "UHF_antenna_3",
+      "type": "MESH",
+      "parent": "UHF_antenna"
+    },
+    {
+      "name": "RISE_antennas",
+      "type": "EMPTY",
+      "parent": "deck"
+    },
+    {
+      "name": "RISE_antennas_0",
+      "type": "MESH",
+      "parent": "RISE_antennas"
+    },
+    {
+      "name": "arm_01.001",
+      "type": "EMPTY",
+      "parent": "deck"
+    },
+    {
+      "name": "arm_01_0",
+      "type": "MESH",
+      "parent": "arm_01.001"
+    },
+    {
+      "name": "arm_02.002",
+      "type": "EMPTY",
+      "parent": "arm_01.001"
+    },
+    {
+      "name": "arm_02_0",
+      "type": "MESH",
+      "parent": "arm_02.002"
+    },
+    {
+      "name": "arm_02_1",
+      "type": "MESH",
+      "parent": "arm_02.002"
+    },
+    {
+      "name": "arm_02_2",
+      "type": "MESH",
+      "parent": "arm_02.002"
+    },
+    {
+      "name": "arm_03",
+      "type": "EMPTY",
+      "parent": "arm_02.002"
+    },
+    {
+      "name": "arm_03_0",
+      "type": "MESH",
+      "parent": "arm_03"
+    },
+    {
+      "name": "arm_03_1",
+      "type": "MESH",
+      "parent": "arm_03"
+    },
+    {
+      "name": "arm_03_2",
+      "type": "MESH",
+      "parent": "arm_03"
+    },
+    {
+      "name": "camera_base.114_114_correction",
+      "type": "EMPTY",
+      "parent": "GLTF_created_0.001"
+    },
+    {
+      "name": "camera_base.114_114",
+      "type": "EMPTY",
+      "parent": "camera_base.114_114_correction"
+    },
+    {
+      "name": "camera_fitting_screw_1.115_115_correction",
+      "type": "EMPTY",
+      "parent": "GLTF_created_0.001"
+    },
+    {
+      "name": "camera_fitting_screw_1.115_115",
+      "type": "EMPTY",
+      "parent": "camera_fitting_screw_1.115_115_correction"
+    },
+    {
+      "name": "camera_fitting_screw_2.116_116_correction",
+      "type": "EMPTY",
+      "parent": "GLTF_created_0.001"
+    },
+    {
+      "name": "camera_fitting_screw_2.116_116",
+      "type": "EMPTY",
+      "parent": "camera_fitting_screw_2.116_116_correction"
+    },
+    {
+      "name": "camera_fitting_screw_3.117_117_correction",
+      "type": "EMPTY",
+      "parent": "GLTF_created_0.001"
+    },
+    {
+      "name": "camera_fitting_screw_3.117_117",
+      "type": "EMPTY",
+      "parent": "camera_fitting_screw_3.117_117_correction"
+    },
+    {
+      "name": "camera_fitting_screw_4.118_118_correction",
+      "type": "EMPTY",
+      "parent": "GLTF_created_0.001"
+    },
+    {
+      "name": "camera_fitting_screw_4.118_118",
+      "type": "EMPTY",
+      "parent": "camera_fitting_screw_4.118_118_correction"
+    },
+    {
+      "name": "camera.119_119_correction",
+      "type": "EMPTY",
+      "parent": "GLTF_created_0.001"
+    },
+    {
+      "name": "camera.119_119",
+      "type": "EMPTY",
+      "parent": "camera.119_119_correction"
+    },
+    {
+      "name": "camera_screw_1.120_120_correction",
+      "type": "EMPTY",
+      "parent": "GLTF_created_0.001"
+    },
+    {
+      "name": "camera_screw_1.120_120",
+      "type": "EMPTY",
+      "parent": "camera_screw_1.120_120_correction"
+    },
+    {
+      "name": "camera_screw_2.121_121_correction",
+      "type": "EMPTY",
+      "parent": "GLTF_created_0.001"
+    },
+    {
+      "name": "camera_screw_2.121_121",
+      "type": "EMPTY",
+      "parent": "camera_screw_2.121_121_correction"
+    },
+    {
+      "name": "camera_screw_3.122_122_correction",
+      "type": "EMPTY",
+      "parent": "GLTF_created_0.001"
+    },
+    {
+      "name": "camera_screw_3.122_122",
+      "type": "EMPTY",
+      "parent": "camera_screw_3.122_122_correction"
+    },
+    {
+      "name": "Joe.fbx_JA",
+      "type": "EMPTY",
+      "parent": "Sketchfab_model.016_JA"
+    },
+    {
+      "name": "Joe_JA",
+      "type": "EMPTY",
+      "parent": "RootNode.009_JA"
+    },
+    {
+      "name": "Arms_JA",
+      "type": "EMPTY",
+      "parent": "Joe_JA"
+    },
+    {
+      "name": "Arms_Hand_0_JA",
+      "type": "MESH",
+      "parent": "Arms_JA"
+    },
+    {
+      "name": "Arms_Torso_0_JA",
+      "type": "MESH",
+      "parent": "Arms_JA"
+    },
+    {
+      "name": "Joe_Astronaut_Suit",
+      "type": "EMPTY",
+      "parent": "Joe_Astronaut"
+    },
+    {
+      "name": "Joe_Astronaut",
+      "type": "EMPTY",
+      "parent": null
+    },
+    {
+      "name": "Hair_Inner_Layer",
+      "type": "MESH",
+      "parent": "ludovisions_FC1_rig"
+    },
+    {
+      "name": "Mars_OneShot_Camera",
+      "type": "CAMERA",
+      "parent": null
+    },
+    {
+      "name": "Mars_Orbit_View_Camera",
+      "type": "CAMERA",
+      "parent": null
+    },
+    {
+      "name": "White_Circle_Marker",
+      "type": "CURVE",
+      "parent": null
+    },
+    {
+      "name": "Mars_Sun",
+      "type": "LIGHT",
+      "parent": null
+    },
+    {
+      "name": "Mars_Camera",
+      "type": "CAMERA",
+      "parent": null
+    },
+    {
+      "name": "Girls_Camera",
+      "type": "CAMERA",
+      "parent": null
+    },
+    {
+      "name": "Astronauts_Camera",
+      "type": "CAMERA",
+      "parent": null
+    },
+    {
+      "name": "NEW_Crater_C1_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Crater_C1_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Crater_C2_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Crater_C2_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Crater_C3_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Crater_C3_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Path_P1_to_Crater1",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Path_P2_to_Dunes",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Path_P5_to_Crater2",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Path_P6_to_Crater3",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Exploration_Floor_Rover_Start",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Waypoint_Marker_Rover_Start",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Exploration_Floor_Crater1",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Waypoint_Marker_Crater1",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Exploration_Floor_Dunes",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Waypoint_Marker_Dunes",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Waypoint_Marker_Plain",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Waypoint_Marker_Slope",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Exploration_Floor_Crater2",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Waypoint_Marker_Crater2",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Exploration_Floor_Crater3",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Waypoint_Marker_Crater3",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Waypoint_Marker_Valley",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "MARS_NEW_Globe_Rotator",
+      "type": "EMPTY",
+      "parent": "Planet_Anchor"
+    },
+    {
+      "name": "MARS_NEW_Globe",
+      "type": "MESH",
+      "parent": "MARS_NEW_Globe_Rotator"
+    },
+    {
+      "name": "MARS_NEW_Explore_Area_Pin",
+      "type": "MESH",
+      "parent": "MARS_NEW_Explore_Lat_Pivot"
+    },
+    {
+      "name": "MARS_NEW_Globe_Camera",
+      "type": "CAMERA",
+      "parent": "Planet_Anchor"
+    },
+    {
+      "name": "NEW_Layer_Elevation",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Layer_Slope",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Layer_Geological",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Layer_Temperature",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Layer_Dust",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_Layer_Sunlight_Shadow",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_000_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_000_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_001_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_001_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_002_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_002_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_003_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_003_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_004_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_004_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_005_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_005_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_006_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_007_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_008_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_008_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_009_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_009_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_010_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_010_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_011_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_011_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_012_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_012_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_013_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_013_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_014_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_014_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_015_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_015_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_016_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_016_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_017_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_017_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_018_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_018_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_019_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_019_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_021_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_021_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_022_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_022_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_023_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_023_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_024_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_024_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_025_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_025_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_026_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_026_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_027_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_027_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_028_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_028_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_029_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_029_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_030_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_030_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_031_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_031_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_032_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_032_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_033_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_033_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_034_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_034_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_035_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_035_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_036_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_036_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_037_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_037_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_038_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_038_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_039_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_039_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_040_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_040_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_041_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_041_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_042_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_042_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_043_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_043_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_044_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_044_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_045_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_045_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_046_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_046_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_047_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_047_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_048_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_048_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_049_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_049_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_050_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_050_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_051_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_051_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_052_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_052_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_053_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_053_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_054_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_054_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_055_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_055_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_056_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_056_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_057_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_057_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_058_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_058_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_059_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_059_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_060_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_060_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_061_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_061_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_062_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_062_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_063_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_063_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_064_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_064_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_065_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_065_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_066_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_066_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_067_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_067_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_068_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_068_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_069_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_069_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_070_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_070_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_071_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_071_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_072_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_072_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_073_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_073_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_074_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_074_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_075_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_075_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_076_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_076_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_077_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_077_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_078_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_078_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_079_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_079_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_080_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_080_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_081_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_081_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_082_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_082_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_083_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_083_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_084_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_084_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_085_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_085_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_086_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_086_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_087_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_087_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_088_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_088_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_089_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_089_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_090_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_090_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_091_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_091_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_092_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_092_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_093_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_093_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_094_Bowl",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Crater_094_Rim",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_000",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_001",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_002",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_003",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_004",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_005",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_006",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_007",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_008",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_009",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_010",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_011",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_012",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_013",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_015",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_017",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_018",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_019",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_021",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_022",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_023",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_024",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_025",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_026",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_027",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_028",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_029",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_030",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_031",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_032",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_033",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_034",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_035",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_036",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_037",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_038",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_039",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_040",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_041",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_042",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_043",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_044",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_045",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_046",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_047",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_048",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_049",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_050",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_051",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_052",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_053",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_054",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_055",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_056",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_057",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_058",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_059",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_060",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_061",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_062",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_063",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_064",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_065",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_066",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_067",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_068",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_069",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_070",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_071",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_072",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_073",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_074",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_075",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_076",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_077",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_078",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_079",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_080",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_081",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_082",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_083",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_085",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_086",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_087",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_088",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_089",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_090",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_091",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_092",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_093",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Crater_094",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Field_00",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Field_01",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Field_02",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Field_04",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Field_05",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Field_06",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Field_07",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Field_08",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Field_09",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Field_10",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Field_11",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Field_12",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Field_13",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Field_14",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Field_15",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Field_16",
+      "type": "MESH",
+      "parent": null
+    },
+    {
+      "name": "NEW_G_Boulders_Field_17",
+      "type": "MESH",
+      "parent": null
+    }
+  ],
+  "interesting_count": 477
+}

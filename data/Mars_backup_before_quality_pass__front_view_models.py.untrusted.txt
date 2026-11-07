@@ -1,0 +1,84 @@
+Source text datablock: front_view_models.py
+Not executed by this inspection.
+
+
+import bpy, math
+from mathutils import Vector
+
+TARGET_ROOTS = ["Sketchfab_model.007", "ludovisions_FC1_rig", "Sketchfab_model.015",
+                "Sketchfab_model", "Joe_Astronaut", "Sketchfab_model.003"]
+PADDING = 1.1
+
+class VIEW3D_OT_front_on_models(bpy.types.Operator):
+    bl_idname = "view3d.front_on_models"
+    bl_label = "Front View on Models"
+    bl_description = "Face the models straight from the front, centered and fully visible"
+
+    def execute(self, context):
+        area = context.area
+        if area is None or area.type != 'VIEW_3D':
+            return {'CANCELLED'}
+        space = area.spaces.active
+        r3d = space.region_3d
+        region = next((r for r in area.regions if r.type == 'WINDOW'), None)
+        vl = context.view_layer
+        pts = []
+        for n in TARGET_ROOTS:
+            root = bpy.data.objects.get(n)
+            if root is None:
+                continue
+            for o in [root] + list(root.children_recursive):
+                if o.type != 'MESH' or o.name not in vl.objects or o.hide_get() or o.hide_viewport:
+                    continue
+                mw = o.matrix_world
+                pts += [mw @ Vector(c) for c in o.bound_box]
+        if not pts:
+            self.report({'WARNING'}, "Models not found")
+            return {'CANCELLED'}
+        mn = Vector((min(p.x for p in pts), min(p.y for p in pts), min(p.z for p in pts)))
+        mx = Vector((max(p.x for p in pts), max(p.y for p in pts), max(p.z for p in pts)))
+        center = (mn + mx) / 2
+        w, h = mx.x - mn.x, mx.z - mn.z
+
+        # straight front view (looking along +Y), perspective, zero tilt
+        r3d.view_perspective = 'PERSP'
+        r3d.view_rotation = (math.sqrt(0.5), math.sqrt(0.5), 0.0, 0.0)
+        r3d.view_location = center
+
+        winx, winy = region.width, region.height
+        half = (space.lens and 36.0 / space.lens) or 0.3      # half-extent per unit distance (larger side)
+        if winx >= winy:
+            kx, ky = half, half * winy / winx
+        else:
+            kx, ky = half * winx / winy, half
+        dist = max((w / 2) / kx, (h / 2) / ky) * PADDING
+        dist += (mx.y - mn.y) / 2                                # reach the front face of the group
+        r3d.view_distance = dist
+        return {'FINISHED'}
+
+_keymaps = []
+
+def register():
+    try:
+        bpy.utils.register_class(VIEW3D_OT_front_on_models)
+    except ValueError:
+        pass
+    kc = bpy.context.window_manager.keyconfigs.addon
+    if kc is None:
+        return
+    for km_name, st in (("3D View", 'VIEW_3D'), ("Object Mode", 'EMPTY')):
+        km = kc.keymaps.new(name=km_name, space_type=st)
+        for key in ("NUMPAD_1", "ONE"):
+            kmi = km.keymap_items.new("view3d.front_on_models", key, 'PRESS')
+            _keymaps.append((km, kmi))
+
+def unregister():
+    for km, kmi in _keymaps:
+        try: km.keymap_items.remove(kmi)
+        except Exception: pass
+    _keymaps.clear()
+    try: bpy.utils.unregister_class(VIEW3D_OT_front_on_models)
+    except Exception: pass
+
+if __name__ == "__main__":
+    register()
