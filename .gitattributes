@@ -1,0 +1,4 @@
+archive/Mars_backup_before_quality_pass.blend filter=lfs diff=lfs merge=lfs -text
+MARS_SENTINEL_NASA_Terrain_Study_SURFACE_FOCUS.blend filter=lfs diff=lfs merge=lfs -text
+data/JEZ_hirise_soc_006_DTM_1m.tif filter=lfs diff=lfs merge=lfs -text
+data/ESP_045994_1985_MRGB.JP2 filter=lfs diff=lfs merge=lfs -text

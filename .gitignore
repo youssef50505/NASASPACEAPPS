@@ -1,8 +1,8 @@
 __pycache__/
 *.pyc
 
-# GitHub rejects any file larger than 100 MB.
+# GitHub rejects any file larger than 100 MB unless it is in Git LFS.
 *.blend
 *.blend1
-data/JEZ_hirise_soc_006_DTM_1m.tif
-data/ESP_045994_1985_MRGB.JP2
+!archive/Mars_backup_before_quality_pass.blend
+!MARS_SENTINEL_NASA_Terrain_Study_SURFACE_FOCUS.blend
